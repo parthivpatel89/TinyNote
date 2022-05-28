@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "413333221758",
+    "project_id": "tinynote",
+    "storage_bucket": "tinynote.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413333221758:android:52794469fcde61c21c832f",
+        "android_client_info": {
+          "package_name": "com.parthiv.tinynote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413333221758-hdao9f6d2r4asfoi3caadd15sle6aa6d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.parthiv.tinynote",
+            "certificate_hash": "ad8fe733f138afb9e6b78e07462bf701e39b1fd9"
+          }
+        },
+        {
+          "client_id": "413333221758-ooih7tibpkloas69po7q3o69ds0pnqhu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhmNpBdU6Om992rcIjo_4kNlsuaminyKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413333221758-ooih7tibpkloas69po7q3o69ds0pnqhu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
