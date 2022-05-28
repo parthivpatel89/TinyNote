@@ -1,4 +1,4 @@
-# tinynote
+# TinyNote
 
 A new Flutter project.
 
