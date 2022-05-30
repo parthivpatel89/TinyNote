@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:tinynote/controller/constants.dart';
 
 ///Show exit popup dialog on back button
 Future<bool> showExitPopup(context) async {
@@ -24,7 +25,7 @@ Future<bool> showExitPopup(context) async {
                         },
                         child: Text("Yes"),
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.red.shade800),
+                            primary: constants.firebaseNavy),
                       ),
                     ),
                     SizedBox(width: 15),

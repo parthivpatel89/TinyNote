@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: Navigate.routes,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.lightBlue,
         brightness: Brightness.light,
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.lightBlue,
         ),
       ),
     );

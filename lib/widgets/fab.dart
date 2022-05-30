@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinynote/controller/constants.dart';
 
 import '../screen/addtask.dart';
 
@@ -12,7 +13,7 @@ class FAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: constants.firebaseNavy,
       onPressed: () => Navigator.push(
           context,
           MaterialPageRoute(
@@ -20,7 +21,7 @@ class FAB extends StatelessWidget {
                 uid: uid, documentId: '', name: '', desc: '', dates: ''),
           )),
       child: const Icon(
-        Icons.edit,
+        Icons.add_rounded,
         color: Colors.white,
       ),
     );

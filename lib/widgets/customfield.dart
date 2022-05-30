@@ -45,52 +45,61 @@ class CustomField extends StatelessWidget {
       keyboardType: _keyboardtype,
       obscureText: isObscure,
       textCapitalization:
-          isCapitalized ? TextCapitalization.words : TextCapitalization.none,
+          isCapitalized ? TextCapitalization.words : TextCapitalization.words,
       textInputAction: _inputAction,
-      cursorColor: constants.firebaseNavy,
+      cursorColor: constants.white,
       validator: (value) => _validator(value!),
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+        ),
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+        ),
         suffixIcon: IconButton(
           onPressed: _emailController.clear,
-          icon: Icon(Icons.clear),
+          icon: const Icon(Icons.clear),
         ),
+
         labelText: isLabelEnabled ? _label : null,
-        labelStyle: TextStyle(color: constants.firebaseNavy),
+        labelStyle: TextStyle(color: constants.white),
+
         hintText: _hint,
         hintStyle: TextStyle(
-          color: constants.hint.withOpacity(0.5),
+          color: Colors.blueGrey,
         ),
         errorStyle: TextStyle(
-          color: Colors.redAccent,
+          color: constants.white,
           fontWeight: FontWeight.bold,
         ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          borderSide: BorderSide(
-            color: constants.firebaseNavy,
-            width: 2,
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          borderSide: BorderSide(
-            color: constants.hint.withOpacity(0.5),
-          ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          borderSide: BorderSide(
-            color: Colors.redAccent,
-            width: 2,
-          ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          borderSide: BorderSide(
-            color: Colors.redAccent,
-            width: 2,
-          ),
-        ),
+        // focusedBorder: OutlineInputBorder(
+        //   borderRadius: BorderRadius.circular(8.0),
+        //   borderSide: BorderSide(
+        //     color: constants.firebaseNavy,
+        //     width: 2,
+        //   ),
+        // ),
+        // enabledBorder: OutlineInputBorder(
+        //   borderRadius: BorderRadius.circular(8.0),
+        //   borderSide: BorderSide(
+        //     color: constants.hint.withOpacity(0.5),
+        //   ),
+        // ),
+        // errorBorder: OutlineInputBorder(
+        //   borderRadius: BorderRadius.circular(8.0),
+        //   borderSide: BorderSide(
+        //     color: constants.white,
+        //     width: 2,
+        //   ),
+        // ),
+        // focusedErrorBorder: OutlineInputBorder(
+        //   borderRadius: BorderRadius.circular(8.0),
+        //   borderSide: BorderSide(
+        //     color: constants.white,
+        //     width: 2,
+        //   ),
+        // ),
       ),
     );
   }

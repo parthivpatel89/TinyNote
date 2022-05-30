@@ -27,8 +27,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
             )
           : OutlinedButton(
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(constants.firebaseNavy),
+                backgroundColor: MaterialStateProperty.all(constants.white),
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40),
@@ -47,12 +46,21 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 });
 
                 if (user != null) {
-                  await _users.add({
-                    "uid": user.uid,
-                    "name": user.displayName,
-                    "email": user.email,
-                    "photourl": user.photoURL
-                  });
+                  QuerySnapshot rsult = await FirebaseFirestore.instance
+                      .collection("users")
+                      .where("email", isEqualTo: user.email)
+                      .get();
+                  print(rsult);
+                  final List<DocumentSnapshot> docs = rsult.docs;
+                  print(docs);
+                  if (docs.length == 0) {
+                    await _users.add({
+                      "uid": user.uid,
+                      "name": user.displayName,
+                      "email": user.email,
+                      "photourl": user.photoURL
+                    });
+                  } else {}
 
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
@@ -67,25 +75,18 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Wrap(
-                  children: <Widget>[
-                    // const Image(
-                    //   image: AssetImage("icons/notes.png"),
-                    //   height: 20.0,
-                    // ),
-
-                    Container(
-                        decoration: BoxDecoration(
-                          color: constants.firebaseNavy,
-                          // border: Border.all(color: Colors.white),
-                          // borderRadius: BorderRadius.circular(10.0)
-                        ),
-                        child: const Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Text(" Sign in with Google",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold)))),
+                  children: const <Widget>[
+                    Image(
+                      image: AssetImage("assets/icons/google_logo.png"),
+                      height: 35.0,
+                    ),
+                    Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Text(" Sign in with Google",
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.w600,
+                            ))),
                   ],
                 ),
               ),

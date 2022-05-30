@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
       DeviceOrientation.portraitDown,
     ]);
     return Scaffold(
-      backgroundColor: constants.white,
+      //backgroundColor: constants.firebaseNavy,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -38,30 +38,28 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      flex: 1,
-                      child: Image.asset(
-                        'assets/icons/notes.png',
-                        height: 160,
-                      ),
+                  children: const [
+                    Image(
+                      image: AssetImage('assets/icons/google_logo.png'),
+                      fit: BoxFit.cover,
                     ),
-                    const SizedBox(height: 20),
-                    Text(
-                      'Hey There,',
-                      style: TextStyle(
-                        color: constants.firebaseNavy,
-                        fontSize: 40,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      'Welcome back',
-                      style: TextStyle(
-                        color: constants.firebaseNavy,
-                        fontSize: 40,
-                      ),
-                    ),
+
+                    SizedBox(height: 20),
+                    // Text(
+                    //   'Hey There,',
+                    //   style: TextStyle(
+                    //     color: constants.firebaseNavy,
+                    //     fontSize: 40,
+                    //   ),
+                    // ),
+                    // const SizedBox(height: 20),
+                    // Text(
+                    //   'Welcome back',
+                    //   style: TextStyle(
+                    //     color: constants.firebaseNavy,
+                    //     fontSize: 40,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
